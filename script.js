@@ -20,7 +20,6 @@ class Visibility {
     eventListener(clickedElement, alterElement) {
         this.getElement(clickedElement).addEventListener("click", () => {
 
-        
         if(this.getElement(alterElement).style.display == "block"){
             let alterElementReturn = this.getElement(alterElement)
             this.hideDisplay(alterElementReturn)
@@ -29,13 +28,19 @@ class Visibility {
             let alterElementReturn = this.getElement(alterElement)
             this.showDisplay(alterElementReturn)
         }
+        });
+    };
 
+    showSlides(index) {
+          let eleHTML = this.getElement("slides");
+          eleHTML.children[index].style.display = "block";
 
-        }
-        );
     }
 
 }
 
 let visiTeste = new Visibility();
 visiTeste.eventListener("drop", "dropdown-content");
+visiTeste.eventListener("arrowLeft", "dropdown-content");
+visiTeste.eventListener("arrowRight", "dropdown-content");
+visiTeste.showSlides();
