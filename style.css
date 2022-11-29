@@ -24,6 +24,7 @@ body {
     margin-right: auto;
     position: relative;
     display: inline-block;
+
 }
 
 #dropdownmenu {
@@ -34,6 +35,10 @@ body {
 
 }
 
+.subMenu {
+    display: none;
+    border: 2px solid gray;
+}
 #dropdownmenu:hover {
     padding: 5px;
     border-radius: 3px;
@@ -60,25 +65,28 @@ body {
     margin-left: 30px;
     border: 1px solid transparent;
     margin-top: 5px;
+    justify-content: flex-end;
 }
 
 #dropdown-content:hover #dropdownmenu{
-    padding: 5px;
+    /* padding: 5px; */
     border-radius: 3px;
     background-color: darkcyan;
 }
 
 .dropMenu { 
     padding: 3px;
+    display:flex;
 }
 
 .dropMenu:hover {
     padding: 3px;
     background-color: #669da9;
     cursor: pointer;
+    
 }
 
-.dropMenu:hover #dropdowmnenu{
+.dropMenu:hover #dropdownmenu{
     background-color: darkcyan;
     padding: 5px;
     border-radius: 3px;
@@ -97,6 +105,7 @@ body {
     border: 0px;
     background-color: #669da9;
     margin-left: 5px;
+    cursor: pointer;
     
 }
 
@@ -116,6 +125,7 @@ body {
     border: 0px;
     background-color: #669da9;
     margin-right: 5px;
+    cursor: pointer;
 }
 
 
