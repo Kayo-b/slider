@@ -1,27 +1,36 @@
 class Visibility {
 
     hideDisplay(element) {
-        element.style.display = "none";
+        //element.style.display = "none";
+        element.style.visibility = "hidden";
     }
 
     showDisplay(element) {
-        element.style.display = "block";
+        //element.style.display = "flex";
+        element.style.visibility = "visible";
     }
 
     getElement(elementID) {
         return document.getElementById(elementID)
     }
 
-    eventListener(clickedElement) {
+    eventListener(clickedElement, alterElement) {
+        let alterElement2 = this.getElement(alterElement)
+        let alterElementChildren = alterElement2.children
         this.getElement(clickedElement).addEventListener("click", (e) => {
-            
-        if(e.target.children[0].style.display == "block"){
+        let indexOfTarget = Array.from(this.getElement(clickedElement).children).indexOf(e.target)
+        console.log(indexOfTarget)
+        console.log(alterElementChildren[indexOfTarget])
+        if(alterElementChildren[indexOfTarget].style.visibility == "visible") {
             //let alterElementReturn = this.getElement(alterElement)
-            this.hideDisplay(e.target.children[0]);
+            this.hideDisplay(alterElement2);
+            this.hideDisplay(alterElementChildren[indexOfTarget]);
+            
         }
         else {
             //let alterElementReturn = this.getElement(alterElement)
-            this.showDisplay(e.target.children[0]);
+            //this.showDisplay(alterElement2);
+            this.showDisplay(alterElementChildren[indexOfTarget]);
         }
         });
     };
@@ -48,7 +57,6 @@ class Visibility {
                 }
             }
         }
-
         else {
             for(let x = 0; x < slides.children.length; x++){
                 if(slides.children[x].style.display == "block"){
@@ -65,6 +73,28 @@ class Visibility {
         }
         });
     };
+
+    mouseOut(elementOne, elementTwo) {
+
+
+        Array.from(document.getElementsByClassName(elementOne)).forEach(item => item.addEventListener("mouseout", () => 
+            Array.from(document.getElementsByClassName(elementOne)).forEach(item => item.style.visibility = "hidden")));
+
+        Array.from(document.getElementsByClassName(elementTwo)).forEach(item => item.addEventListener("mouseover", () => 
+            Array.from(document.getElementsByClassName(elementOne)).forEach(item => item.style.visibility = "hidden")));
+
+        document.getElementById("dropdownmenu").addEventListener("mouseover", () => 
+            Array.from(document.getElementsByClassName(elementOne)).forEach(item => item.style.visibility = "hidden"));
+
+    //     Array.from(document.getElementsByClassName(elementTwo)).forEach(item => item.addEventListener("mouseout", () => {
+    //         Array.from(document.getElementsByClassName(elementTwo)).forEach(item => {
+    //         if(item.style.visibility == "visible") {
+    //             Array.from(document.getElementsByClassName(elementOne)).forEach(item => item.style.visibility = "hidden")}
+    //         else
+    //             console.log("not hidden")
+    // })}));
+
+    }
 
     showSlides(position) {
           let eleHTML = document.getElementById("slides");
@@ -103,9 +133,7 @@ class Visibility {
                         showDots();
                         slideFunction();
                  } 
-
                 return
-
                 }
         }
     }, 3000)
@@ -118,6 +146,7 @@ class Visibility {
 let visiTeste = new Visibility();
 visiTeste.showDots();
 visiTeste.autoSlide();
-visiTeste.eventListener("dropdown-content");
+visiTeste.eventListener("dropdown-content", "dropdown-content2");
 visiTeste.eventListenerSlides("arrowLeft", "dropdown-content");
 visiTeste.eventListenerSlides("arrowRight", "dropdown-content");
+visiTeste.mouseOut("subMenu", "dropMenu")

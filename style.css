@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2px;
+    
 }
 
 #slides-main {
@@ -35,10 +37,6 @@ body {
 
 }
 
-.subMenu {
-    display: none;
-    border: 2px solid gray;
-}
 #dropdownmenu:hover {
     padding: 5px;
     border-radius: 3px;
@@ -52,26 +50,63 @@ body {
 
 #drop:hover > #dropdown-content{
 
-    display: block;
+    display: flex;
     border: 2px solid rgb(81, 81, 81);
-    background-color: darkcyan;
     padding: 5px;
+    background-color: darkcyan;
+    flex-direction: column;
+    justify-content: flex-start;
+    
 }
 
 #dropdown-content {
 
     position: absolute;
     display: none;
-    margin-left: 30px;
-    border: 1px solid transparent;
     margin-top: 5px;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 #dropdown-content:hover #dropdownmenu{
     /* padding: 5px; */
     border-radius: 3px;
     background-color: darkcyan;
+}
+#dropdown-content2 {
+    display: flex;
+    visibility: hidden;
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 7px;
+    margin-left: 73px;
+    /* padding: 5px; */
+
+    
+}
+
+
+.subMenu {
+    display: block;
+    visibility: hidden;
+    position: relative;
+    padding: 3px;
+    padding-top:3px;
+    border: 2px solid rgb(81, 81, 81);
+}
+
+.subMenu:active {
+    visibility: hidden;
+    
+}
+
+.subMenu:hover {
+    
+    padding: 3px;
+    padding-top:3px;
+    background-color: darkcyan;
+    cursor: pointer;
+    
 }
 
 .dropMenu { 
@@ -86,6 +121,7 @@ body {
     
 }
 
+
 .dropMenu:hover #dropdownmenu{
     background-color: darkcyan;
     padding: 5px;
@@ -97,34 +133,36 @@ body {
 }
 
 #arrowRight {
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     background-image: url(up-arrow-svgrepo-com.svg);
     /* transform: scale(1); */
     transform: rotate(90deg);
     border: 0px;
     background-color: #669da9;
-    margin-left: 5px;
+    margin-left: 7px;
     cursor: pointer;
     
 }
 
 #arrowRight:hover {
-    border: black
+    border: black;
+    transform: scale(1.1) rotate(90deg);
 }
 #arrowLeft:hover {
-    border: black
+    border: black;
+    transform: scale(1.1) rotate(270deg);
 }
 
 #arrowLeft {
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     background-image: url(up-arrow-svgrepo-com.svg);
     /* transform: scale(1); */
     transform: rotate(270deg);
     border: 0px;
     background-color: #669da9;
-    margin-right: 5px;
+    margin-right: 7px;
     cursor: pointer;
 }
 
