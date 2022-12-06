@@ -19,17 +19,12 @@ class Visibility {
         let alterElementChildren = alterElement2.children
         this.getElement(clickedElement).addEventListener("click", (e) => {
         let indexOfTarget = Array.from(this.getElement(clickedElement).children).indexOf(e.target)
-        console.log(indexOfTarget)
-        console.log(alterElementChildren[indexOfTarget])
         if(alterElementChildren[indexOfTarget].style.visibility == "visible") {
-            //let alterElementReturn = this.getElement(alterElement)
             this.hideDisplay(alterElement2);
             this.hideDisplay(alterElementChildren[indexOfTarget]);
             
         }
         else {
-            //let alterElementReturn = this.getElement(alterElement)
-            //this.showDisplay(alterElement2);
             this.showDisplay(alterElementChildren[indexOfTarget]);
         }
         });
@@ -40,16 +35,14 @@ class Visibility {
         let element = this.getElement(clickedElement);
         let slides = this.getElement("slides");
         element.addEventListener("click", () => {
-        if(this.getElement(clickedElement).id == "arrowRight"){
+        if(this.getElement(clickedElement).id == "arrowRight") {
             for(let y = 0; y < slides.children.length; y++){
-                if(slides.children[y].style.display == "block"){
-                    if(y >= slides.children.length -1){
-                        console.log(y)
+                if(slides.children[y].style.display == "block") {
+                    if(y >= slides.children.length -1) {
                          this.showSlides(slides.children.length -1)    
                          this.showDots();
                 }
                     else{
-                        console.log(y)
                         this.showSlides(y+1)
                         this.showDots();
                  }
@@ -58,14 +51,14 @@ class Visibility {
             }
         }
         else {
-            for(let x = 0; x < slides.children.length; x++){
-                if(slides.children[x].style.display == "block"){
-                    if(x <= 0){
-                        this.showSlides(0)
+            for(let x = 0; x < slides.children.length; x++) {
+                if(slides.children[x].style.display == "block") {
+                    if(x <= 0) {
+                        this.showSlides(0);
                         this.showDots();
                     }
                     else {
-                        this.showSlides(x-1)
+                        this.showSlides(x-1);
                         this.showDots();
                     }
                 }      
@@ -86,13 +79,6 @@ class Visibility {
         document.getElementById("dropdownmenu").addEventListener("mouseover", () => 
             Array.from(document.getElementsByClassName(elementOne)).forEach(item => item.style.visibility = "hidden"));
 
-    //     Array.from(document.getElementsByClassName(elementTwo)).forEach(item => item.addEventListener("mouseout", () => {
-    //         Array.from(document.getElementsByClassName(elementTwo)).forEach(item => {
-    //         if(item.style.visibility == "visible") {
-    //             Array.from(document.getElementsByClassName(elementOne)).forEach(item => item.style.visibility = "hidden")}
-    //         else
-    //             console.log("not hidden")
-    // })}));
 
     }
 

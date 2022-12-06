@@ -1,3 +1,7 @@
+body {
+    width: 600px;
+}
+
 #container {
 
     display: flex;
@@ -68,7 +72,6 @@ body {
 }
 
 #dropdown-content:hover #dropdownmenu{
-    /* padding: 5px; */
     border-radius: 3px;
     background-color: darkcyan;
 }
@@ -80,9 +83,6 @@ body {
     align-items: flex-end;
     margin-top: 7px;
     margin-left: 73px;
-    /* padding: 5px; */
-
-    
 }
 
 
