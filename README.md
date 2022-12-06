@@ -7,9 +7,8 @@ Interactive menu with a simple image carousel.
  
 ### Technical notes about project development:
 This is my first attempt on dropdown menus and carousel logic. 
-The slider is made using the _.children_ array from the element that holds all the images from the slide and the showing of them happens by changing the display property from _none_ to _block_ if the left/right arrows are pressed.
-The dropdown menu was somewhat experimental and 
+The slider was made using the _.children_ array from the element that holds all the images and the showing of them happens by changing the display property from _none_ to _block_ if the left/right arrows are pressed. The automatic sliding was made using a nested _setTimeout_.
+The dropdown menu was somewhat experimental, I mainly used event listeners, like mouseover/out, to determine how the elements would be displayed, still needs alot of refinement.
 
-https://kayo-b.github.io/todolist/
 
-![Recording 2022-11-21 at 14 06 00](https://user-images.githubusercontent.com/93148601/203075376-8fb5f1b5-9883-4c13-8c73-97ccfe32825d.gif)
+![Recording 2022-11-21 at 14 06 00](SLider_rec.gif)
